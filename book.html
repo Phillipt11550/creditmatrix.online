@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page {
+            width: 200px;
+            height: 300px;
+            display: inline-block; /* Display pages side by side */
+            margin-right: 20px; /* Add some spacing between pages */
+            background-color: rgb(105, 94, 94);
+            border: 1px solid black;
+            transition: transform 1s;
+            vertical-align: top; /* Align pages to the top */
+            padding: 10px; /* Add padding for content */
+            overflow-y: auto; /* Enable scrolling if content exceeds page height */
+        }
+        .flipped {
+            transform: rotateY(180deg);
+        }
+        .button-container {
+            margin-top: 20px; /* Add space between buttons and pages */
+        }
+        .page-button {
+            margin-right: 10px; /* Adjust button spacing */
+        }
+    </style>
+</head>
+<body>
+        <header id="navbar">
+            <nav class="navbar-container container">
+              <a href="index.html" class="home-link">
+                <div class="navbar-logo"></div>
+               CREDIT MATRIX
+              </a>
+              <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div id="navbar-menu" aria-labelledby="navbar-toggle">
+                <ul class="navbar-links">
+                  <li class="navbar-item"><a class="navbar-link" href="index.html">HOME</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="blog.html">BLOG</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="club.html">800 CLUB</a></li>
+                  <li class="navbar-item"><a class="navbar-link" href="contact.html">CONTACT</a></li>
+                </ul>
+              </div>
+            </nav><!-- Your navigation bar code here -->
+    </header>
+
+    <div class="hero">
+        <h1>CREDIT BIBLE</h1>
+            <style>
+        /* Define the keyframes for flickering effect */
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        /* Apply the flickering animation to the body */
+        body {
+            animation: flicker 3s infinite; /* Apply animation infinitely */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('background-image.jpg'); /* Add background image with overlay */
+            background-size: cover;
+            background-blend-mode: multiply; /* Blend the background image with the overlay */
+            color: #181212; /* Set text color to white */
+        }
+
+        /* Rest of your CSS styles */
+        .page {
+            width: 200px;
+            height: 300px;
+            display: inline-block; /* Display pages side by side */
+            margin-right: 20px; /* Add some spacing between pages */
+            background-color: rgba(105, 94, 94, 0.8); /* Use rgba to add opacity */
+            border: 1px solid black;
+            transition: transform 1s;
+            vertical-align: top; /* Align pages to the top */
+            padding: 10px; /* Add padding for content */
+            overflow-y: auto; /* Enable scrolling if content exceeds page height */
+        }
+        .flipped {
+            transform: rotateY(180deg);
+        }
+        .button-container {
+            margin-top: 20px; /* Add space between buttons and pages */
+        }
+        .page-button {
+            margin-right: 10px; /* Adjust button spacing */
+        }
+    </style>
+    </div>
+
+    <div id="book">
+        <div class="page" id="page1"><h3>1. Understand Your Credit Report</h3>
+            Before you can boost your credit, you need to know where you stand. Obtain a copy of your credit report from each of the three major credit bureaus: Experian, Equifax, and TransUnion. Review each report carefully for errors or discrepancies.</div>
+        <div class="page" id="page2"><h3>2. New Credit Applications</h3>
+            Each time you apply for new credit, a hard inquiry is made on your credit report, which can lower your score. Limit your applications for new credit and only apply when necessary.</div>
+        <div class="page" id="page3"><h3>3. Dispute Errors On Your Credit Report</h3>
+            Mistakes happen. You can dispute errors on your credit report with the credit bureau.
+            *Secret: When disputing, clearly identify each mistake, state the facts and explain why you dispute the information, and request deletion or correction.</div>
+        <div class="page" id="page4"><h3>4. Maintain a Low Credit Utilization Ratio</h3>
+            Your credit utilization ratio is the amount of credit you're using compared to the total amount available to you. Keeping this ratio low can positively impact your credit score.</div>
+        <div class="page" id="page5"><h3>5. Pay Your Bills on Time</h3>
+            Late payments can significantly harm your credit score. Make sure to pay all your bills on time to maintain a positive credit history.</div>
+        <div class="page" id="page6"><h3>6. Tradelines to Build Credit</h3>
+            Tradelines, or credit accounts, can be used to build credit. Consider becoming an authorized user on a credit card with a good payment history to boost your credit score.</div>
+        <br>
+        <br>
+            <div class="page" id="page7"><h3>7. Authorized User (AU) Techniques</h3>
+            Being added as an authorized user (AU) on someone else's credit card can help improve your credit score, especially if the primary account holder has a long and positive credit history.</div>
+    </div>
+
+    <div class="button-container">
+        <button id="prevPageBtn" class="page-button">Previous Page</button>
+        <button id="nextPageBtn" class="page-button">Next Page</button>
+    </div>
+
+    <script>
+        var currentPage = 1;
+
+        document.getElementById('prevPageBtn').addEventListener('click', function() {
+            if (currentPage > 1) {
+                document.getElementById('page' + currentPage).classList.remove('flipped');
+                currentPage--;
+            }
+        });
+
+        document.getElementById('nextPageBtn').addEventListener('click', function() {
+            if (currentPage < 7) { // Assuming there are 7 pages now, adjust accordingly
+                document.getElementById('page' + currentPage).classList.add('flipped');
+                currentPage++;
+            }
+        });
+    </script>
+    <div class="footer">
+        <p>© 2024 Credit Matrix</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+var currentPage = 1;
+
+function flipPage(pageNum) {
+    var page = document.getElementById('page' + pageNum);
+    page.classList.add('flipped');
+}
+
+function resetPages() {
+    var pages = document.getElementsByClassName('page');
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('flipped');
+    }
+}
+
+document.getElementById('prevPageBtn').addEventListener('click', function() {
+    if (currentPage > 1) {
+        resetPages();
+        currentPage--;
+        flipPage(currentPage);
+    }
+});
+
+document.getElementById('nextPageBtn').addEventListener('click', function() {
+    if (currentPage < 3) { // Change '3' to the total number of pages
+        resetPages();
+        currentPage++;
+        flipPage(currentPage);
+    }
+});

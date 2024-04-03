@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Credit Matrix</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<head>
+    <header id="navbar">
+        <nav class="navbar-container container">
+          <a href="index.html" class="home-link">
+            <div class="navbar-logo"></div>
+           CREDIT MATRIX
+          </a>
+          <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="navbar-menu" aria-labelledby="navbar-toggle">
+            <ul class="navbar-links">
+              <li class="navbar-item"><a class="navbar-link" href="index.html">HOME</a></li>
+              <li class="navbar-item"><a class="navbar-link" href="blog.html">BLOG</a></li>
+              <li class="navbar-item"><a class="navbar-link" href="club.html">800 CLUB</a></li>
+              <li class="navbar-item"><a class="navbar-link" href="contact.html">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <div class="navbar">
+        <h2>BLOG</h2>
+        <!-- Add a dropdown menu -->
+
+    <style>
+        /* Add styles for the feedback form */
+        .feedback-form {
+            margin: 20px;
+        }
+        .feedback-form input, .feedback-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        /* Add styles for the feedback display */
+        .feedback-display {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing content... -->
+
+    <!-- Add a feedback form -->
+    <div class="feedback-form">
+        <h2>FORUM</h2>
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="feedback" placeholder="Your Feedback"></textarea>
+        <button onclick="submitFeedback()">Submit</button>
+    </div>
+
+    <!-- Add a feedback display -->
+    <div id="feedback-display" class="feedback-display"></div>
+
+
+
+    <script>
+        function submitFeedback() {
+            // Get the feedback from the form
+            var name = document.getElementById('name').value;
+            var feedback = document.getElementById('feedback').value;
+
+            // Create a new feedback element
+            var feedbackElement = document.createElement('p');
+            feedbackElement.textContent = name + ': ' + feedback;
+
+            // Add the feedback element to the feedback display
+            var feedbackDisplay = document.getElementById('feedback-display');
+            feedbackDisplay.appendChild(feedbackElement);
+
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('feedback').value = '';
+        }
+    </script>
+    <script src="app.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-3d444c26-012f-4653-a67f-07c30eed8bf2" data-elfsight-app-lazy></div>
+<div class="footer">
+    <p>© 2024 Credit Matrix</p>
+</div>
+</body>
+</html>
